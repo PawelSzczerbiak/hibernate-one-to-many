@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mems</title>
+    <link th:href="@{/css/style.css}" rel="stylesheet">
+</head>
+<body>
+    <p><a th:href="@{/mems/add}">Add mem</a></p>
+    <p><a th:href="@{/categories/add}">Add category</a></p>
+    <p th:each="mem : ${mems}">
+        <a th:href="@{'/mems/' + ${mem.id}}"><img th:src="${mem.url}" th:alt="${mem.title}"/></a>
+    </p>
+</body>
+</html>

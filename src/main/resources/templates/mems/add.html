@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add mem</title>
+</head>
+<body>
+<h2>Add mem:</h2>
+
+<form action="#" th:action="@{/mems/add}" method="post" th:object="${mem}">
+    <input th:field="*{id}" hidden/>
+    <input th:field="*{title}" placeholder="Title"/>
+    <select th:field="*{category}">
+        <option th:each="el : ${categories}" th:value="${el.id}" th:text="${el.name}"/>
+    </select>
+    <input type="text" th:field="*{url}" placeholder="URL"/>
+    <input type="submit" value="Add"/>
+</form>
+</body>
+</html>

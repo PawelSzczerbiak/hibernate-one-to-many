@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mem</title>
+    <link th:href="@{/css/style.css}" rel="stylesheet">
+</head>
+<body>
+    <div th:if="${mem} != null">
+        <img th:src="${mem.url}">
+
+        <p id="comment_list">All comments:</p>
+        <p th:each="comment : ${mem.comments}" th:text="${comment}"></p>
+        <form action="/mems/addcomment" method="post">
+            <input type="hidden" name="memId" th:value="${mem.id}"/>
+            <textarea type="text" name="commentText" placeholder="Your comment..."></textarea>
+            <br/>
+            <input type="submit" value="Add comment"/>
+        </form>
+
+    </div>
+
+    <div th:if="${mem} == null">
+        <p>Mem not found.</p>
+    </div>
+</body>
+</html>
