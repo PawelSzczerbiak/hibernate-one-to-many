@@ -3,6 +3,7 @@ package pl.szczerbiak.kwejk2.model;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "comment") // good practice
 public class Comment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
@@ -11,6 +12,7 @@ public class Comment {
     // EAGER fetching is bad for performance
     @ManyToOne(fetch = FetchType.LAZY) // or:
 //    @OneToOne(optional = true)
+    @JoinColumn(name = "mem_id")
     private Mem mem;
 
     public Mem getMem() {

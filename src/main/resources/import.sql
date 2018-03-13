@@ -2,5 +2,5 @@ INSERT INTO mem(title,url) VALUES ('Inteligentny zegarek', 'http://memy.pl/show/
 INSERT INTO mem(title,url) VALUES ('Jak zyc?', 'http://memy.pl/show/big/uploads/Post/196123/15200773794288.jpg')
 INSERT INTO category(name) VALUES ('funny')
 INSERT INTO category(name) VALUES ('other')
-insert into comment (mem_id, text, id) values (1, 'My first review', 1)
-insert into comment (mem_id, text, id) values (1, 'My second review', 2)
+insert into comment(mem_id, text, id) values (1, 'My first review', 1)
+insert into comment(mem_id, text, id) values (1, 'My second review', 2)
